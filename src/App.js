@@ -1,8 +1,9 @@
-function App() {
+import React from 'react';
+import ExpensesListPage from './pages/expensesListPage/ExpensesListPage';
+
+const App = () => {
   return (
-    <div>
-      <p>Hello world</p>
-    </div>
+    <ExpensesListPage />
   );
 }
 
