@@ -5,7 +5,7 @@ export class ExpensesService {
   private axiosInstance: AxiosInstance;
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: 'http://localhost:3003/'
+      baseURL: process.env.REACT_APP_API_URL
     });
   }
 
