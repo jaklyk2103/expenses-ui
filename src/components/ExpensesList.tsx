@@ -1,24 +1,16 @@
-import React, { useEffect, useState } from 'react';
 import { Expense } from '../services/types';
-import { ExpensesService } from '../services/expensesService';
 import ExpenseListElement from './ExpenseListElement';
 
-const ExpensesList = () => {
-  const expensesService = new ExpensesService();
-  
-  const [ expenses, setExpenses ] = useState([] as Expense[]);
+type ExpenseListProps = {
+  expenses: Expense[];
+}
 
-  useEffect(() => {
-    expensesService.getAllExpensesForUser({ email: 'test@email.com' })
-      .then((expenses) => {
-        setExpenses(expenses);
-      })
-  }, []);
+const ExpensesList = ({ expenses }: ExpenseListProps) => {
   return (
     <div>
       <p>Expenses:</p>
       {expenses.map((expense) => {
-        return <ExpenseListElement expense={expense}></ExpenseListElement>
+        return <ExpenseListElement expense={expense} key={expense.id}></ExpenseListElement>
       })}
     </div>
   );

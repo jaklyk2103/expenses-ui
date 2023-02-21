@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Expenses UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Repo contains web application for Expenses system.
+
+It's deployed using Firebase Hosting which is integrated with the Github repository.
 
 ## Available Scripts
 

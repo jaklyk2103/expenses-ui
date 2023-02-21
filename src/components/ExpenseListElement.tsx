@@ -2,7 +2,7 @@ import React from 'react';
 import { Expense } from '../services/types';
 
 type ExpenseListElementProps = {
-  expense: Expense
+  expense: Expense;
 }
 
 const ExpenseListElement = ({ expense }: ExpenseListElementProps) => {

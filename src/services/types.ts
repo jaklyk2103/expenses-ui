@@ -8,6 +8,7 @@ export type AddExpensePayload = {
 }
 
 export type Expense = {
+  id: string;
   expenseOwnerEmail: string;
   description: string;
   value: number;

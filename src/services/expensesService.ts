@@ -5,7 +5,7 @@ export class ExpensesService {
   private axiosInstance: AxiosInstance;
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: 'https://fs4d02d2t1.execute-api.eu-west-1.amazonaws.com/prod/'
+      baseURL: 'http://localhost:3003/'
     });
   }
 
@@ -13,7 +13,7 @@ export class ExpensesService {
     const { email } = payload;
     const result = await this.axiosInstance({
       method: 'GET',
-      url: 'user/expense',
+      url: 'user/expenses',
       params: {
         email
       }
