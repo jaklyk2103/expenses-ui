@@ -6,11 +6,16 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import AddExpensePage from './pages/expensesListPage/addExpensePage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <ExpensesListPage />
+  },
+  {
+    path: "/addExpense",
+    element: <AddExpensePage />
   },
 ]);
 // import { initializeApp } from "firebase/app";

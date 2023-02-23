@@ -1,0 +1,18 @@
+.single-navigation-link {
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  border: solid black 1px;
+  border-radius: 5px;
+  padding: 0.25rem;
+  background-color: hsl(0, 0%, 90%);
+}
+
+.single-navigation-link-wrapper {
+  border-bottom: solid black 1px;
+  height: 2rem;
+  padding-top: 0.5rem;
+  justify-content: center;
+  text-align: center;
+}

@@ -1,0 +1,19 @@
+.navigation-bar-page-title {
+  border: solid red 2px;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  /* align-self: center; */
+}
+
+.navigation-bar-link-left {
+  /* align-self: flex-start; */
+}
+
+.navigation-bar-link-right {
+  /* align-self: flex-end; */
+}
+
+.navigation-bar-wrapper {
+  display: grid;
+  grid-template-columns: auto;
+}

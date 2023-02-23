@@ -1,0 +1,10 @@
+.add-expense-form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-expense-form-input {
+  margin: 0.5rem 0.5rem 0 0.5rem;
+  border: solid black 1px;
+
+}
