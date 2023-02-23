@@ -1,6 +1,6 @@
 import React from 'react';
 import { Expense } from '../../services/types';
-import "./ExpenseListElement.css";
+import "./expenseListElement.css";
 
 type ExpenseListElementProps = {
   expense: Expense;

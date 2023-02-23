@@ -1,6 +1,6 @@
 import { Expense } from '../../services/types';
-import ExpenseListElement from '../ExpenseListElement/ExpenseListElement';
-import "./ExpensesList.css";
+import ExpenseListElement from '../expenseListElement/expenseListElement';
+import "./expensesList.css";
 
 type ExpenseListProps = {
   expenses: Expense[];

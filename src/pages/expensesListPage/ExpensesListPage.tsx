@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ExpensesList from '../../components/ExpensesList/ExpensesList';
+import ExpensesList from '../../components/expensesList/expensesList';
 import { Expense } from '../../services/types';
 import { ExpensesService } from '../../services/expensesService';
 
@@ -15,7 +15,9 @@ const ExpensesListPage = () => {
   }, []);
 
   return (
-    <ExpensesList expenses={expenses}/>
+    <>
+      <ExpensesList expenses={expenses}/>
+    </>
   );
 }
 
