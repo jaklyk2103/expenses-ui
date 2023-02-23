@@ -1,0 +1,8 @@
+.expense-list-element-wrapper {
+  border: solid black 1px;
+  display: grid;
+  grid-template-columns: 10fr 1fr 1fr;
+  margin-bottom: 0.25rem;
+  padding: 0.25rem;
+  line-height: 0.5rem;
+}

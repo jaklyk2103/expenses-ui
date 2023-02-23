@@ -1,5 +1,6 @@
-import { Expense } from '../services/types';
-import ExpenseListElement from './ExpenseListElement';
+import { Expense } from '../../services/types';
+import ExpenseListElement from '../ExpenseListElement/ExpenseListElement';
+import "./ExpensesList.css";
 
 type ExpenseListProps = {
   expenses: Expense[];
@@ -7,7 +8,7 @@ type ExpenseListProps = {
 
 const ExpensesList = ({ expenses }: ExpenseListProps) => {
   return (
-    <div>
+    <div className="expenses-list-wrapper">
       <p>Expenses:</p>
       {expenses.map((expense) => {
         return <ExpenseListElement expense={expense} key={expense.id}></ExpenseListElement>

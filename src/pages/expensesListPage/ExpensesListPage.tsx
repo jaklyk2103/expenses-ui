@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ExpensesList from '../../components/ExpensesList';
+import ExpensesList from '../../components/ExpensesList/ExpensesList';
 import { Expense } from '../../services/types';
 import { ExpensesService } from '../../services/expensesService';
 
