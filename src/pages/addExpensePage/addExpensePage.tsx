@@ -1,6 +1,5 @@
 import AddExpenseForm from '../../components/addExpenseForm/addExpenseForm';
 import NavigationBar from '../../components/navigationBar/navigationBar';
-import SingleNavigationLink from '../../components/singleNavigationLink/singleNavigationLink';
 
 const AddExpensePage = () => {
   return (

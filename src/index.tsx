@@ -6,7 +6,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import AddExpensePage from './pages/expensesListPage/addExpensePage';
+import AddExpensePage from './pages/addExpensePage/addExpensePage';
 
 const router = createBrowserRouter([
   {
