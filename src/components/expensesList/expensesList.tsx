@@ -10,7 +10,7 @@ const ExpensesList = ({ expenses }: ExpenseListProps) => {
   return (
     <div className="expenses-list-wrapper">
       <p>Expenses:</p>
-      {expenses.map((expense) => {
+      {expenses && expenses.map((expense) => {
         return <ExpenseListElement expense={expense} key={expense.id}></ExpenseListElement>
       })}
     </div>
