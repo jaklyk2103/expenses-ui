@@ -1,10 +1,10 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./addExpenseForm.css";
 
 export default function AddExpenseForm() {
-  const [description, setDescription] = useState('');
-  const [currency, setCurrency] = useState('PLN');
-  const [value, setValue] = useState(0);
+  // const [description, setDescription] = useState('');
+  // const [currency, setCurrency] = useState('PLN');
+  // const [value, setValue] = useState(0);
 
   return(
     <form className="add-expense-form-wrapper">
