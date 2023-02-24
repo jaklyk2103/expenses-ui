@@ -1,4 +1,5 @@
-import { Link, LinkProps } from "react-router-dom";
+import { LinkProps } from "react-router-dom";
+import SingleNavigationLink from "../singleNavigationLink/singleNavigationLink";
 import './navigationBar.css';
 
 type NavigationBarProps = {
@@ -10,9 +11,9 @@ type NavigationBarProps = {
 export default function NavigationBar(props: NavigationBarProps) {
   return(
     <div className='navigation-bar-wrapper'>
-      {props.leftNavigationBarItem && <Link className='single-navigation-link navigation-bar-link-left' {...props.leftNavigationBarItem}>{props.leftNavigationBarItem.children}</Link>} 
+      {props.leftNavigationBarItem && <SingleNavigationLink className='navigation-bar-link-left' {...props.leftNavigationBarItem}>{props.leftNavigationBarItem.children}</SingleNavigationLink>} 
       <div className='navigation-bar-page-title'><p>{props.pageTitle}</p></div>
-      {props.rightNavigationBarItem && <Link className='single-navigation-link navigation-bar-link-right' {...props.rightNavigationBarItem}>{props.rightNavigationBarItem.children}</Link>} 
+      {props.rightNavigationBarItem && <SingleNavigationLink className='navigation-bar-link-right' {...props.rightNavigationBarItem}>{props.rightNavigationBarItem.children}</SingleNavigationLink>} 
     </div>
   )
 }

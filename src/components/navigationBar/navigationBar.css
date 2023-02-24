@@ -1,8 +1,9 @@
 .navigation-bar-page-title {
   max-width: 7rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-self: center;
+  align-self: center;
+  grid-area: "title";
 }
 
 .navigation-bar-page-title > p {
@@ -12,20 +13,29 @@
 }
 
 .navigation-bar-link-left {
-  max-width: 4rem;
+  max-width: 8rem;
   margin-left: 0.5rem;
+  justify-self: start;
+  align-self: center;
+  grid-area: "left";
 }
 
 .navigation-bar-link-right {
-  max-width: 4rem;
+  max-width: 8rem;
   margin-right: 0.5rem;
+  justify-self: end;
+  align-self: center;
+  grid-area: "right";
 }
 
 .navigation-bar-wrapper {
-  margin-top: 0.25rem;
+  min-height: 2rem;
+  margin-top: 0.15rem;
+  padding-bottom: 0.2rem;
   margin-bottom: 1rem;
-  padding-bottom: 0.25rem;
   border-bottom: solid black 1px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+    "left title right";
 }
