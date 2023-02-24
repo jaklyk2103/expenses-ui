@@ -1,19 +1,31 @@
 .navigation-bar-page-title {
-  border: solid red 2px;
-  padding: 0.25rem;
-  margin: 0.25rem;
-  /* align-self: center; */
+  max-width: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation-bar-page-title > p {
+  margin: auto;
+  font-weight: bold;
+  text-align: center;
 }
 
 .navigation-bar-link-left {
-  /* align-self: flex-start; */
+  max-width: 4rem;
+  margin-left: 0.5rem;
 }
 
 .navigation-bar-link-right {
-  /* align-self: flex-end; */
+  max-width: 4rem;
+  margin-right: 0.5rem;
 }
 
 .navigation-bar-wrapper {
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.25rem;
+  border-bottom: solid black 1px;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 1fr 1fr 1fr;
 }
