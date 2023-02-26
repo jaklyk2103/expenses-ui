@@ -19,6 +19,7 @@ export class ExpensesService {
       }
     })
     const expenses = result.data as Expense[];
+    console.log(`expenses: ${JSON.stringify(expenses)}`);
     return expenses;
   }
 
