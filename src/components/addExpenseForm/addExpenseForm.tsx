@@ -1,8 +1,11 @@
 import { ChangeEvent, MouseEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ExpensesService } from "../../services/expensesService";
+import SelectCurrencyFormField from "../selectCurrencyFormField/selectCurrencyFormField";
 import "./addExpenseForm.css";
 
 export default function AddExpenseForm() {
+  const navigate = useNavigate();
   const [description, setDescription] = useState('');
   const [currency, setCurrency] = useState('PLN');
   const [value, setValue] = useState(0);
@@ -19,7 +22,8 @@ export default function AddExpenseForm() {
         value,
         expenseOwnerEmail: 'test@email.com',
       }
-    })
+    });
+    navigate('/');
   };
 
   const handleDescriptionInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -38,7 +42,8 @@ export default function AddExpenseForm() {
     <form className="add-expense-form-wrapper">
       <input className='add-expense-form-input' type="text" onChange={handleDescriptionInputChange} placeholder="description" />
       <input className='add-expense-form-input' type="number" min="1" step="any" onChange={handleValueInputChange} placeholder="value" />
-      <input className='add-expense-form-input' type="text" onChange={handleCurrencyInputChange} placeholder="currency" />
+      {/* <input className='add-expense-form-input' type="text" onChange={handleCurrencyInputChange} placeholder="currency" /> */}
+      <SelectCurrencyFormField />
       <button className='add-expense-form-button' onClick={handleAddExpenseButtonClick}>Add</button>
     </form>
   );
