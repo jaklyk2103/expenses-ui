@@ -34,17 +34,12 @@ export default function AddExpenseForm() {
     setValue(Number(event.target.value));
   };
 
-  const handleCurrencyInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setCurrency(event.target.value);
-  }
-
   return(
-    <form className="add-expense-form-wrapper">
+    <div className="add-expense-form-wrapper">
       <input className='add-expense-form-input' type="text" onChange={handleDescriptionInputChange} placeholder="description" />
       <input className='add-expense-form-input' type="number" min="1" step="any" onChange={handleValueInputChange} placeholder="value" />
-      {/* <input className='add-expense-form-input' type="text" onChange={handleCurrencyInputChange} placeholder="currency" /> */}
-      <SelectCurrencyFormField />
+      <SelectCurrencyFormField className='add-expense-form-input' setCurrencyHandler={setCurrency} />
       <button className='add-expense-form-button' onClick={handleAddExpenseButtonClick}>Add</button>
-    </form>
+    </div>
   );
 }

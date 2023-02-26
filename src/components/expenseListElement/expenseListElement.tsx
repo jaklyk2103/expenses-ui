@@ -10,7 +10,7 @@ const ExpenseListElement = ({ expense }: ExpenseListElementProps) => {
   return (
     <div className="expense-list-element-wrapper">
       <p>{ expense.description }</p>
-      <p>{ expense.value }</p>
+      <p className="expenses-list-element-value">{ expense.value }</p>
       <p>{ expense.currency }</p>
     </div>
   );

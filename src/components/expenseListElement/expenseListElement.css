@@ -6,3 +6,8 @@
   padding: 0.25rem;
   line-height: 0.5rem;
 }
+
+.expenses-list-element-value {
+  text-align: right;
+  margin-right: 0.5rem;
+}
