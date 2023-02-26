@@ -17,7 +17,8 @@ export class UserService {
     const response = await this.axiosInstance({
       method: 'POST',
       data: payload,
-      url: '/login'
+      url: '/login',
+      withCredentials: true
     });
     console.log(`token: ${JSON.stringify(response.data)}`);
 
