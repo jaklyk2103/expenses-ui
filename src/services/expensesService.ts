@@ -16,7 +16,8 @@ export class ExpensesService {
       url: 'user/expenses',
       params: {
         email
-      }
+      },
+      withCredentials: true
     })
     const expenses = result.data as Expense[];
     console.log(`expenses: ${JSON.stringify(expenses)}`);
@@ -32,7 +33,8 @@ export class ExpensesService {
       data: {
         email,
         ...expense
-      }
+      },
+      withCredentials: true
     });
   }
 }
