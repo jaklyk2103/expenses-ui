@@ -7,6 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import AddExpensePage from './pages/addExpensePage/addExpensePage';
+import LoginPage from './pages/loginPage/loginPage';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     path: "/addExpense",
     element: <AddExpensePage />
   },
+  {
+    path: "/login",
+    element: <LoginPage />
+  }
 ]);
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
