@@ -34,12 +34,6 @@ const router = createBrowserRouter([
 // const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app); // eslint-disable-line no-unused-vars
 
-const appHeight = () => {
-  document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`)
-}
-window.addEventListener('resize', appHeight);
-appHeight();
-
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 
 root.render(
