@@ -12,11 +12,19 @@ body {
 }
 
 html, body {
+  min-height: 100vh;            /* fall-back */
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: stretch;
   height: 100vh;
   height: var(--app-height);
 }
 
 #root {
+  min-height: 100vh;            /* fall-back */
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: stretch;
   padding: 0;
   margin: 0;
   overflow: hidden;
