@@ -2,6 +2,7 @@ import { ChangeEvent, MouseEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserService } from '../../services/userService';
 import { ApiClient } from '../../shared/apiClient/apiClient';
+import "./loginForm.css";
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
@@ -33,11 +34,11 @@ export default function LoginForm() {
   }
 
   return(
-    <form>
-      <label htmlFor="email">Email</label>
-      <input id="email" name="email" autoComplete='email' type="email" onChange={handleEmailChange} placeholder='Email' />
-      <label htmlFor="password">Password</label>
-      <input id="password" name="password" autoComplete='current-password' type="password" onChange={handlePasswordChange} placeholder='Password' />
+    <form className='login-form-wrapper'>
+      <label className='login-form-label' htmlFor="email">Email</label>
+      <input className='login-form-input' id="email" name="email" autoComplete='email' type="email" onChange={handleEmailChange} placeholder='Email' />
+      <label className='login-form-label' htmlFor="password">Password</label>
+      <input className='login-form-input' id="password" name="password" autoComplete='current-password' type="password" onChange={handlePasswordChange} placeholder='Password' />
       <button onClick={handleLoginButtonClick}>Log in</button>
     </form>
   );

@@ -20,7 +20,7 @@ const ExpensesListPage = () => {
 
   return (
     <>
-      <NavigationBar pageTitle='Expenses' rightNavigationBarItem={{ to:'addExpense', children:'Add Expense' }} ></NavigationBar>
+      <NavigationBar pageTitle='Expenses' leftNavigationBarItem={{ to: 'login', children: 'Log out' }} rightNavigationBarItem={{ to:'addExpense', children:'Add Expense' }} ></NavigationBar>
       <ExpensesList expenses={expenses}/>
     </>
   );

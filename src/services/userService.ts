@@ -5,6 +5,10 @@ type LogInPayload = {
   password: string;
 }
 
+type LogOutPayload = {
+  email: string;
+}
+
 export class UserService {
   private apiClient: IApiClient
   constructor(apiClient: IApiClient) {
@@ -18,5 +22,16 @@ export class UserService {
       url: '/login',
       withCredentials: true,
     });
+  }
+
+  async logOut(payload: LogOutPayload) {
+    window.localStorage.removeItem('userEmail');
+
+    return this.apiClient.requestApi({
+      method: 'POST',
+      data: payload,
+      url: '/logout',
+      withCredentials: true
+    })
   }
 }
