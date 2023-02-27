@@ -31,9 +31,9 @@ export default function LoginForm() {
   return(
     <form>
       <label htmlFor="email">Email</label>
-      <input name="email" autoComplete='email' type="email" onChange={handleEmailChange} placeholder='Email' />
+      <input id="email" name="email" autoComplete='email' type="email" onChange={handleEmailChange} placeholder='Email' />
       <label htmlFor="password">Password</label>
-      <input name="password" autoComplete='current-password' type="password" onChange={handlePasswordChange} placeholder='Password' />
+      <input id="password" name="password" autoComplete='current-password' type="password" onChange={handlePasswordChange} placeholder='Password' />
       <button onClick={handleLoginButtonClick}>Log in</button>
     </form>
   );
