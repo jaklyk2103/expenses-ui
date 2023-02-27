@@ -1,28 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import ExpensesListPage from './pages/expensesListPage/expensesListPage';
 import './index.css';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import AddExpensePage from './pages/addExpensePage/addExpensePage';
-import LoginPage from './pages/loginPage/loginPage';
+import CustomRouter from './components/customRouter/customRouter';
+import { history } from './components/customRouter/history'; 
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <ExpensesListPage />
-  },
-  {
-    path: "/addExpense",
-    element: <AddExpensePage />
-  },
-  {
-    path: "/login",
-    element: <LoginPage />
-  }
-]);
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 
@@ -43,6 +24,6 @@ const root = ReactDOM.createRoot(document.getElementById('root')!);
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <CustomRouter history={history} />
   </React.StrictMode>
 );

@@ -1,6 +1,7 @@
 import { ChangeEvent, MouseEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserService } from '../../services/userService';
+import { ApiClient } from '../../shared/apiClient/apiClient';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
@@ -21,7 +22,8 @@ export default function LoginForm() {
   }
 
   const logIn = async () => {
-    const userService = new UserService();
+    const apiClient = new ApiClient();
+    const userService = new UserService(apiClient);
     const token = await userService.logIn({ email: email, password });
     if (token) navigate('/');
   }

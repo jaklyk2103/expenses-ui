@@ -1,6 +1,7 @@
 import { ChangeEvent, MouseEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ExpensesService } from "../../services/expensesService";
+import { ApiClient } from "../../shared/apiClient/apiClient";
 import SelectCurrencyFormField from "../selectCurrencyFormField/selectCurrencyFormField";
 import "./addExpenseForm.css";
 
@@ -13,7 +14,8 @@ export default function AddExpenseForm() {
   const handleAddExpenseButtonClick = async (event: MouseEvent) => {
     event.preventDefault();
 
-    const expenseService = new ExpensesService();
+    const apiClient = new ApiClient();
+    const expenseService = new ExpensesService(apiClient);
     await expenseService.addExpense({
       email: 'test@email.com',
       expense: {

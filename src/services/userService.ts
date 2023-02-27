@@ -1,4 +1,4 @@
-import axios, { AxiosInstance } from "axios";
+import { IApiClient } from "../shared/apiClient/apiClient.interface";
 
 type LogInPayload = {
   email: string;
@@ -6,22 +6,17 @@ type LogInPayload = {
 }
 
 export class UserService {
-  private axiosInstance: AxiosInstance;
-  constructor() {
-    this.axiosInstance = axios.create({
-      baseURL: process.env.REACT_APP_API_URL
-    });
+  private apiClient: IApiClient
+  constructor(apiClient: IApiClient) {
+    this.apiClient = apiClient;
   }
 
   async logIn(payload: LogInPayload) {
-    const response = await this.axiosInstance({
+     return this.apiClient.requestApi({
       method: 'POST',
       data: payload,
       url: '/login',
-      withCredentials: true
+      withCredentials: true,
     });
-    console.log(`token: ${JSON.stringify(response.data)}`);
-
-    return response.data;
   }
 }
