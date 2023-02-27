@@ -3,6 +3,11 @@
   "name": "Expenses",
   "start_url": "/",
   "theme_color": "#000000",
-  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "./apple-touch-startup-image.png",
+      "sizes": "any"
+    }
+  ],
   "background_color": "#ffffff"
 }
