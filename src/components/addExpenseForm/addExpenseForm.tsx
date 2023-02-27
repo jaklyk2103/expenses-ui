@@ -16,13 +16,14 @@ export default function AddExpenseForm() {
 
     const apiClient = new ApiClient();
     const expenseService = new ExpensesService(apiClient);
+    const userEmail = window.localStorage.getItem('userEmail') as string;
     await expenseService.addExpense({
-      email: 'test@email.com',
+      email: userEmail,
       expense: {
         currency,
         description,
         value,
-        expenseOwnerEmail: 'test@email.com',
+        expenseOwnerEmail: userEmail,
       }
     });
     navigate('/');
