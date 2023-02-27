@@ -11,7 +11,8 @@ const ExpensesListPage = () => {
   useEffect(() => {
     const apiClient = new ApiClient();
     const expensesService = new ExpensesService(apiClient);
-    expensesService.getAllExpensesForUser({ email: 'test@email.com' })
+    const userEmail = window.localStorage.getItem('userEmail') as string;
+    expensesService.getAllExpensesForUser({ email: userEmail })
       .then((expenses) => {
         setExpenses(expenses);
       });

@@ -24,8 +24,12 @@ export default function LoginForm() {
   const logIn = async () => {
     const apiClient = new ApiClient();
     const userService = new UserService(apiClient);
-    const token = await userService.logIn({ email: email, password });
-    if (token) navigate('/');
+    const token = await userService.logIn({ email, password });
+    if (token) {
+      window.localStorage.setItem('userEmail', email);
+      navigate('/');
+    }
+
   }
 
   return(
