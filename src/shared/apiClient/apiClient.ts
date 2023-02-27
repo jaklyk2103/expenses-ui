@@ -7,7 +7,7 @@ export class ApiClient implements IApiClient {
 
   constructor() {
     this.axios = axios.create({
-      baseURL: 'http://localhost:3003',
+      baseURL: process.env.REACT_APP_API_URL,
       withCredentials: true
     });
   }
