@@ -3,5 +3,6 @@
   "name": "Expenses",
   "start_url": "/",
   "theme_color": "#000000",
+  "display": "fullscreen",
   "background_color": "#ffffff"
 }
