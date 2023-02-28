@@ -5,12 +5,13 @@
 }
 
 .login-form-label {
-  
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
 }
 
 .login-form-input {
   width: 17rem;
-  height: 2rem;
+  height: 2.25rem;
   margin-bottom: 1rem;
   box-sizing: border-box;
 }

@@ -39,10 +39,10 @@ export default function LoginForm() {
       <NavigationBar pageTitle='Sign In' />
       <form className='login-form-wrapper'>
         <label className='login-form-label' htmlFor="email">Email</label>
-        <input className='login-form-input' id="email" name="email" autoComplete='email' type="email" onChange={handleEmailChange} placeholder='Email' />
+        <input className='login-form-input' id="email" name="email" autoComplete='email' type="email" onChange={handleEmailChange} />
         <label className='login-form-label' htmlFor="password">Password</label>
-        <input className='login-form-input' id="password" name="password" autoComplete='current-password' type="password" onChange={handlePasswordChange} placeholder='Password' />
-        <button className='login-form-button' onClick={handleLoginButtonClick}>Log in</button>
+        <input className='login-form-input' id="password" name="password" autoComplete='current-password' type="password" onChange={handlePasswordChange} />
+        <button className='login-form-button' onClick={handleLoginButtonClick}>Sign in</button>
       </form>
     </>
   );
