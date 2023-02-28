@@ -15,3 +15,12 @@ export type Expense = {
   value: number;
   currency: string;
 }
+
+export type ExpenseDTO = {
+  id?: string;
+  date: string;
+  expenseOwnerEmail: string;
+  description: string;
+  value: number;
+  currency: string;
+}

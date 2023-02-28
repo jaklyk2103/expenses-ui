@@ -1,4 +1,4 @@
-import { AddExpensePayload, Expense, GetAllExpensesForUserPayload } from "./types";
+import { AddExpensePayload, Expense, GetAllExpensesForUserPayload, ExpenseDTO } from "./types";
 import { IApiClient } from "../shared/apiClient/apiClient.interface";
 
 export class ExpensesService {
@@ -15,11 +15,8 @@ export class ExpensesService {
       params: {
         email
       }
-    }) as Expense[];
-    return expenses.map(expense => ({
-      ...expense,
-      date: new Date()
-    }));
+    }) as ExpenseDTO[];
+    return expenses.map(this.mapExpenseDTOToExpense);
   }
 
   async addExpense(payload: AddExpensePayload): Promise<void> {
@@ -34,5 +31,17 @@ export class ExpensesService {
       },
       withCredentials: true,
     });
+  }
+
+  private mapExpenseDTOToExpense(expenseDTO: ExpenseDTO): Expense {
+    const { currency, date, description, expenseOwnerEmail, value, id } = expenseDTO;
+    return {
+      id,
+      currency,
+      date: new Date(date),
+      description,
+      expenseOwnerEmail,
+      value
+    }
   }
 }
