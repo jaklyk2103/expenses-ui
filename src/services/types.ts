@@ -9,6 +9,7 @@ export type AddExpensePayload = {
 
 export type Expense = {
   id?: string;
+  date: Date;
   expenseOwnerEmail: string;
   description: string;
   value: number;

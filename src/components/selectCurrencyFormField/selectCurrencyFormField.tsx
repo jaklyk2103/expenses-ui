@@ -3,6 +3,8 @@ import { currencies } from "./currencies";
 
 type SelectCurrencyFormFieldProps = {
   setCurrencyHandler: Function;
+  id?: string;
+  name?: string;
   className?: string;
 }
 
@@ -20,7 +22,7 @@ export default function SelectCurrencyFormField(props: SelectCurrencyFormFieldPr
   }
 
   return (
-    <select className={props.className} onChange={handleSelect}>
+    <select id={props.id} name={props.name} className={props.className} onChange={handleSelect}>
       {createOptionTags()}
     </select>
   )

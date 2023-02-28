@@ -16,7 +16,10 @@ export class ExpensesService {
         email
       }
     }) as Expense[];
-    return expenses;
+    return expenses.map(expense => ({
+      ...expense,
+      date: new Date()
+    }));
   }
 
   async addExpense(payload: AddExpensePayload): Promise<void> {

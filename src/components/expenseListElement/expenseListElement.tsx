@@ -9,6 +9,7 @@ type ExpenseListElementProps = {
 const ExpenseListElement = ({ expense }: ExpenseListElementProps) => {
   return (
     <div className="expense-list-element-wrapper">
+      <p>{ expense.date.toDateString() }</p>
       <p>{ expense.description }</p>
       <p className="expenses-list-element-value">{ expense.value }</p>
       <p>{ expense.currency }</p>
