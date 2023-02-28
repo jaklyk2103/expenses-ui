@@ -2,12 +2,33 @@
   border: solid black 1px;
   display: grid;
   grid-template-columns: 10fr 1fr 1fr;
+  grid-template-areas:
+  "date date value currency"
+  "description description value currency";
   margin-bottom: 0.25rem;
-  padding: 0.25rem;
+  padding: 0.75rem;
+  row-gap: 1rem;
   line-height: 0.5rem;
 }
 
+.expense-list-element-description {
+  grid-area: description;
+  margin: 0;
+}
+
+.expense-list-element-date {
+  grid-area: date;
+  margin: 0;
+}
+
 .expenses-list-element-value {
+  margin: 0;
+  grid-area: value;
   text-align: right;
   margin-right: 0.5rem;
+}
+
+.expense-list-element-currency {
+  margin: 0;
+  grid-area: currency;
 }
