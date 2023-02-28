@@ -1,5 +1,7 @@
 .login-form-wrapper {
-
+  display: grid;
+  margin: auto;
+  margin-top: 5rem;
 }
 
 .login-form-label {
@@ -7,5 +9,14 @@
 }
 
 .login-form-input {
+  width: 17rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
 
+.login-form-button {
+  margin-top: 1rem;
+  width: 17rem;
+  height: 2rem;
 }
