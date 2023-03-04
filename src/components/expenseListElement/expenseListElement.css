@@ -19,16 +19,22 @@
 .expense-list-element-date {
   grid-area: date;
   margin: 0;
+  border-right: solid 1px black;
+  border-bottom: solid 1px black;
+  margin-top: -0.75rem;
+  margin-left: -0.75rem;
+  padding: 0.5rem;
+  width: fit-content;
 }
 
 .expenses-list-element-value {
-  margin: 0;
+  margin: auto;
   grid-area: value;
   text-align: right;
   margin-right: 0.5rem;
 }
 
 .expense-list-element-currency {
-  margin: 0;
+  margin: auto;
   grid-area: currency;
 }
