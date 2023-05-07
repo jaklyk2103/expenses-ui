@@ -2,11 +2,21 @@ import { BrowserHistory } from 'history';
 import React from 'react';
 import { BrowserRouterProps, Route, Router, Routes } from 'react-router-dom';
 import AddExpensePage from '../../pages/addExpensePage/addExpensePage';
+import ExpensePage from '../../pages/expensePage/expensePage';
 import ExpensesListPage from '../../pages/expensesListPage/expensesListPage';
 import LoginPage from '../../pages/loginPage/loginPage';
+import { Expense } from '../../services/types';
 
 interface CustomRouterProps extends BrowserRouterProps {
   history: BrowserHistory;
+}
+
+const defaultExpense: Expense = {
+  currency: 'PLN',
+  date: new Date(),
+  description: 'default description',
+  expenseOwnerEmail: 'test-email',
+  value: 123
 }
 
 const CustomRouter = ({ basename, history }: CustomRouterProps) => {
@@ -28,6 +38,7 @@ const CustomRouter = ({ basename, history }: CustomRouterProps) => {
         <Route path='/' element={<ExpensesListPage />} />
         <Route path='/addExpense' element={<AddExpensePage />} />
         <Route path='/login' element={<LoginPage />} />
+        <Route path='/expense' element={<ExpensePage />} />
       </Routes>
     </Router>
   );
