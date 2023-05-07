@@ -5,18 +5,9 @@ import AddExpensePage from '../../pages/addExpensePage/addExpensePage';
 import ExpensePage from '../../pages/expensePage/expensePage';
 import ExpensesListPage from '../../pages/expensesListPage/expensesListPage';
 import LoginPage from '../../pages/loginPage/loginPage';
-import { Expense } from '../../services/types';
 
 interface CustomRouterProps extends BrowserRouterProps {
   history: BrowserHistory;
-}
-
-const defaultExpense: Expense = {
-  currency: 'PLN',
-  date: new Date(),
-  description: 'default description',
-  expenseOwnerEmail: 'test-email',
-  value: 123
 }
 
 const CustomRouter = ({ basename, history }: CustomRouterProps) => {

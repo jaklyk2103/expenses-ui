@@ -24,7 +24,9 @@ export default function EditExpenseForm({ expense }: EditExpenseFormProps) {
     const apiClient = new ApiClient();
     const expenseService = new ExpensesService(apiClient);
     const userEmail = window.localStorage.getItem('userEmail') as string;
-    await expenseService.addExpense({
+
+    console.log(`expense: ${JSON.stringify(expense)}`)
+    await expenseService.addOrUpdateExpense({
       email: userEmail,
       expense: {
         date,
@@ -32,6 +34,7 @@ export default function EditExpenseForm({ expense }: EditExpenseFormProps) {
         description,
         value,
         expenseOwnerEmail: userEmail,
+        id: expense.id
       }
     });
     navigate('/');

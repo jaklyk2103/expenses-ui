@@ -1,4 +1,4 @@
-import { AddExpensePayload, Expense, GetAllExpensesForUserPayload, ExpenseDTO } from "./types";
+import { AddOrUpdateExpensePayload, Expense, GetAllExpensesForUserPayload, ExpenseDTO } from "./types";
 import { IApiClient } from "../shared/apiClient/apiClient.interface";
 
 export class ExpensesService {
@@ -19,7 +19,7 @@ export class ExpensesService {
     return expenses.map(this.mapExpenseDTOToExpense);
   }
 
-  async addExpense(payload: AddExpensePayload): Promise<void> {
+  async addOrUpdateExpense(payload: AddOrUpdateExpensePayload): Promise<void> {
     const { email, expense } = payload;
 
     await this.apiClient.requestApi({

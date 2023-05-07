@@ -19,7 +19,7 @@ export default function AddExpenseForm() {
     const apiClient = new ApiClient();
     const expenseService = new ExpensesService(apiClient);
     const userEmail = window.localStorage.getItem('userEmail') as string;
-    await expenseService.addExpense({
+    await expenseService.addOrUpdateExpense({
       email: userEmail,
       expense: {
         date,

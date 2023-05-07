@@ -2,7 +2,7 @@ export type GetAllExpensesForUserPayload = {
   email: string;
 }
 
-export type AddExpensePayload = {
+export type AddOrUpdateExpensePayload = {
   email: string,
   expense: Expense
 }
