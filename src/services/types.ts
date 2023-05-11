@@ -7,6 +7,11 @@ export type AddOrUpdateExpensePayload = {
   expense: Expense
 }
 
+export type DeleteExpensePayload = {
+  email: string,
+  id: string
+}
+
 export type Expense = {
   id?: string;
   date: Date;

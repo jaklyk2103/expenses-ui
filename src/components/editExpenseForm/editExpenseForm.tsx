@@ -17,6 +17,7 @@ export default function EditExpenseForm({ expense }: EditExpenseFormProps) {
   const [currency, setCurrency] = useState(expense.currency);
   const [value, setValue] = useState(expense.value);
   const [date, setDate] = useState(expense.date);
+  const [shouldDisplayDeleteWarning, setShouldDisplayDeleteWarning] = useState(false);
 
   const handleEditExpenseButtonClick = async (event: MouseEvent) => {
     event.preventDefault();
@@ -25,7 +26,6 @@ export default function EditExpenseForm({ expense }: EditExpenseFormProps) {
     const expenseService = new ExpensesService(apiClient);
     const userEmail = window.localStorage.getItem('userEmail') as string;
 
-    console.log(`expense: ${JSON.stringify(expense)}`)
     await expenseService.addOrUpdateExpense({
       email: userEmail,
       expense: {
@@ -39,6 +39,26 @@ export default function EditExpenseForm({ expense }: EditExpenseFormProps) {
     });
     navigate('/');
   };
+
+  const handleDeleteExpenseButtonClick = async (event: MouseEvent) => {
+    event.preventDefault();
+
+    if (!shouldDisplayDeleteWarning) {
+      setShouldDisplayDeleteWarning(true);
+      return;
+    }
+    
+    setShouldDisplayDeleteWarning(false);
+    const apiClient = new ApiClient();
+    const expensesService = new ExpensesService(apiClient);
+    const userEmail = window.localStorage.getItem('userEmail') as string;
+
+    await expensesService.deleteExpense({
+      email: userEmail,
+      id: expense.id!
+    });
+    navigate('/');
+  }
 
   const handleDescriptionInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setDescription(event.target.value);
@@ -68,6 +88,8 @@ export default function EditExpenseForm({ expense }: EditExpenseFormProps) {
       </div>
       
       <button className='add-expense-form-button' onClick={handleEditExpenseButtonClick}>Edit</button>
+      <button className='delete-expense-form-button' onClick={handleDeleteExpenseButtonClick}>Delete</button>
+      {shouldDisplayDeleteWarning && <p>Are you sure?</p>}
     </div>
   );
 }

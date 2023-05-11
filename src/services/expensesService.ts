@@ -1,4 +1,4 @@
-import { AddOrUpdateExpensePayload, Expense, GetAllExpensesForUserPayload, ExpenseDTO } from "./types";
+import { AddOrUpdateExpensePayload, Expense, GetAllExpensesForUserPayload, ExpenseDTO, DeleteExpensePayload } from "./types";
 import { IApiClient } from "../shared/apiClient/apiClient.interface";
 
 export class ExpensesService {
@@ -31,6 +31,20 @@ export class ExpensesService {
       },
       withCredentials: true,
     });
+  }
+
+  async deleteExpense(payload: DeleteExpensePayload): Promise<void> {
+    const { email, id } = payload;
+
+    await this.apiClient.requestApi({
+      method: 'POST',
+      url: 'delete-expense',
+      data: {
+        email,
+        id
+      },
+      withCredentials: true,
+    })
   }
 
   private mapExpenseDTOToExpense(expenseDTO: ExpenseDTO): Expense {
