@@ -1,7 +1,7 @@
 .add-expense-form-wrapper {
   display: grid;
-  grid-template-rows: 3rem 3rem 3rem 3rem 3rem;
-  row-gap: 2rem;
+  grid-template-rows: repeat(6, 5rem);
+  row-gap: 1.5rem;
   margin: 1.5rem 0.5rem 0.5rem 0.5rem;
 }
 
@@ -23,4 +23,15 @@
   margin-top: 1rem;
   height: 2rem;
   font-size: 1rem;
+}
+
+.delete-expense-form-button {
+  margin-top: 1rem;
+  height: 2rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.delete-warning-wording {
+  text-align: center;
 }

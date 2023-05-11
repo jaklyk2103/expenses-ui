@@ -47,7 +47,7 @@ export default function EditExpenseForm({ expense }: EditExpenseFormProps) {
       setShouldDisplayDeleteWarning(true);
       return;
     }
-    
+
     setShouldDisplayDeleteWarning(false);
     const apiClient = new ApiClient();
     const expensesService = new ExpensesService(apiClient);
@@ -88,8 +88,11 @@ export default function EditExpenseForm({ expense }: EditExpenseFormProps) {
       </div>
       
       <button className='add-expense-form-button' onClick={handleEditExpenseButtonClick}>Edit</button>
-      <button className='delete-expense-form-button' onClick={handleDeleteExpenseButtonClick}>Delete</button>
-      {shouldDisplayDeleteWarning && <p>Are you sure?</p>}
+
+      <div>
+        <button className='delete-expense-form-button' onClick={handleDeleteExpenseButtonClick}>Delete</button>
+        {shouldDisplayDeleteWarning && <p className='delete-warning-wording'>Are you sure?</p>}
+      </div>
     </div>
   );
 }
